@@ -4,7 +4,7 @@ import ImageBG from "./img.webp";
 
 class glitch {
   constructor(el) {
-    // create stage
+    
     const imgLink =
       "https://images.unsplash.com/photo-1546465282-0b4b7b64edf9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80";
     const canvas = document.querySelector(".pixi");
@@ -34,10 +34,10 @@ class glitch {
 
     this.img.y = app.screen.height / 2 - 160;
 
-    // add image to stage
+    
     app.stage.addChild(this.imgBG, this.img);
 
-    // create all filters, rgb split and glitch slices
+   
     this.img.filters = [
       new PIXI.filters.GlitchFilter()
     ];
@@ -49,7 +49,7 @@ class glitch {
     this.img.filters[0].blue.x = 0;
     this.img.filters[0].blue.y = 0;
 
-    // reset glitch
+    
     this.img.filters[0].slices = 0;
     this.img.filters[0].offset = 2;
     this.anim = this.anim.bind(this);
