@@ -19,8 +19,6 @@ class glitch {
     const textureBG = PIXI.Texture.from(ImageBG);
     this.imgBG = new PIXI.Sprite(textureBG);
 
-    // image
-    // const texture = PIXI.Texture.from(Image);
     this.img = new PIXI.Text("SOME TEXT", {
       fontSize: 100,
       fill: 0xffff00,
@@ -34,24 +32,16 @@ class glitch {
     this.imgBG.anchor.x = 0.5;
     this.imgBG.anchor.y = 0.5;
 
-    // center image
-    // this.img.scale.set(0.25);
-    // this.img.x = app.screen.width / 2 - 180;
     this.img.y = app.screen.height / 2 - 160;
-    // this.img.anchor.x = 0.5;
-    // this.img.anchor.y = 0.5;
 
     // add image to stage
     app.stage.addChild(this.imgBG, this.img);
 
     // create all filters, rgb split and glitch slices
     this.img.filters = [
-      // new PIXI.filters.RGBSplitFilter(),
       new PIXI.filters.GlitchFilter()
     ];
 
-    // this.img.filters[0].seed = 1;
-    // reset rgb split
     this.img.filters[0].red.x = 0;
     this.img.filters[0].red.y = 0;
     this.img.filters[0].green.x = 0;
@@ -62,10 +52,6 @@ class glitch {
     // reset glitch
     this.img.filters[0].slices = 0;
     this.img.filters[0].offset = 2;
-    // this.img.filters[1].minSize = 1;
-    // this.img.filters[1].sampleSize = 100;
-    // this.img.filters[1].padding = this.img.height / 2;
-    // begin animation
     this.anim = this.anim.bind(this);
     this.anim();
   }
